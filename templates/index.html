@@ -7,8 +7,10 @@
 	<table>
 		{% for i in range(0,9) %}
 		<tr>
-			{% for i in range(0,9) %}
-			<td>X</td>
+			{% for j in range(0,9) %}
+			<td>
+				<input type="textarea" name="l{{ i }}c{{ j }}" />
+			</td>
 			{% endfor %}
 		</tr>
 		{% endfor %}
