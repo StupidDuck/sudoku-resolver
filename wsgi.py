@@ -1,18 +1,8 @@
 #!/usr/bin/env python
 import os
 
-def application(environ, start_response):
+from pythonweb import app as application
 
-    ctype = 'text/plain'
-    if environ['PATH_INFO'] == '/health':
-        response_body = "1"
-    elif environ['PATH_INFO'] == '/env':
-        response_body = ['%s: %s' % (key, value)
-                    for key, value in sorted(environ.items())]
-        response_body = '\n'.join(response_body)
-    else:
-        ctype = 'text/html'
-        response_body = '''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -295,4 +285,4 @@ if __name__ == '__main__':
     from wsgiref.simple_server import make_server
     httpd = make_server('localhost', 8051, application)
     # Wait for a single request, serve it and quit.
-    httpd.handle_request()
+    httpd.serve_forever()
