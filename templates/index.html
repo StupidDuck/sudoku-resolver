@@ -9,7 +9,7 @@
 		<tr>
 			{% for j in range(0,9) %}
 			<td>
-				<input type="textarea" name="l{{ i }}c{{ j }}" />
+				<input type="number" name="l{{ i }}c{{ j }}" min="0" max="9" />
 			</td>
 			{% endfor %}
 		</tr>
