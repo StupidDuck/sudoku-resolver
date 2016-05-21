@@ -1,4 +1,5 @@
 # coding: utf-8
+'''
 def afficher_grille(s):
 	for i in range(9):
 		for j in range(9):
@@ -8,6 +9,7 @@ def afficher_grille(s):
 		print
 		if i in (2, 5):
 			print
+'''
 
 def verifier_ligne(array, i_ligne, start, end, val_test):
 	for i in range (start, end):
