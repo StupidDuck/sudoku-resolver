@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from pythonweb import app as application
+from app import app as application
 
 #
 # Below for testing only
