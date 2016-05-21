@@ -34,4 +34,4 @@ def index():
 	return render_template('index.html', grille = grille)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
