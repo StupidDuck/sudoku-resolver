@@ -3,9 +3,12 @@
 
 from flask import Flask, request, session, redirect, url_for, render_template, flash
 from s import *
+import os
+
+ip   = os.environ['OPENSHIFT_PYTHON_IP']
+port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
 
 app = Flask(__name__)
-
 app.secret_key = 'alakazam'
 
 @app.route('/', methods=['GET', 'POST'])
