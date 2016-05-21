@@ -32,6 +32,6 @@ def index():
 		resoudre_grille(grille)
 	
 	return render_template('index.html', grille = grille)
-
+'''
 if __name__ == '__main__':
-	app.run()
+	app.run()'''
