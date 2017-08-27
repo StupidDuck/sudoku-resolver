@@ -1,24 +1,15 @@
-#! /usr/bin/python
 # -*- coding:utf-8 -*-
 
-from flask import Flask, request, session, redirect, url_for, render_template, flash
+from flask import Flask, request, render_template
 from s import *
-import os
-
-ip   = os.environ['OPENSHIFT_PYTHON_IP']
-port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
 
 app = Flask(__name__)
-app.secret_key = 'alakazam'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	grille = [range(9) for x in range(9)]
-	for i in range(9):
-		for j in range(9):
-			grille[i][j] = 0
-
-	#exemple hard-codé
+	grille = [[0 for i in range(9)] for j in range(9)]
+	
+	#exemple hard-codé. TODO : générateur de grille valide...
 	grille[0] = [0,1,0, 0,2,5, 0,7,0]
 	grille[1] = [0,0,5, 0,1,7, 0,6,9]
 	grille[2] = [7,8,9, 0,3,0, 0,0,0]
